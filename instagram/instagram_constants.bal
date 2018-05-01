@@ -1,4 +1,6 @@
 // Instagram API urls
+@final string INSTAGRAM_API_URL = "https://api.instagram.com/v1";
+
 @final string USERS_SELF_API = "/users/self/?access_token=";
 
 // Symbols

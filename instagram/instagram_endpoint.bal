@@ -38,6 +38,7 @@ public function Client::init(InstagramConfiguration instagramConfig) {
         }
         () => {}
     }
+    instagramConfig.clientConfig.url = INSTAGRAM_API_URL;
     self.instagramConnector.client.init(instagramConfig.clientConfig);
 }
 
