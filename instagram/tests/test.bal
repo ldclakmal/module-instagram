@@ -4,10 +4,10 @@ import ballerina/test;
 import ballerina/config;
 
 endpoint Client instagramClient {
-    clientConfig:{
-        auth:{
-            scheme:"oauth",
-            accessToken:config:getAsString("ACCESS_TOKEN")
+    clientConfig: {
+        auth: {
+            scheme: "oauth",
+            accessToken: config:getAsString("ACCESS_TOKEN")
         }
     }
 };

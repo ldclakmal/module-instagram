@@ -12,21 +12,21 @@ function parseResponseToJson(http:Response|error response) returns (json|Instagr
             match jsonPayload {
                 json payload => {
                     if (httpResponse.statusCode != http:OK_200 && httpResponse.statusCode != http:CREATED_201) {
-                        InstagramError instagramError = {message:httpResponse.statusCode + WHITE_SPACE
-                            + httpResponse.reasonPhrase + DASH_WITH_WHITE_SPACES_SYMBOL + payload.toString()};
+                        InstagramError instagramError = { message: httpResponse.statusCode + WHITE_SPACE
+                            + httpResponse.reasonPhrase + DASH_WITH_WHITE_SPACES_SYMBOL + payload.toString() };
                         return instagramError;
                     }
                     return payload;
                 }
                 error err => {
-                    InstagramError instagramError = {message:"Error occurred when parsing response to json."};
+                    InstagramError instagramError = { message: "Error occurred when parsing response to json." };
                     instagramError.cause = err.cause;
                     return instagramError;
                 }
             }
         }
         error err => {
-            InstagramError instagramError = {message:"Error occurred when HTTP client invocation."};
+            InstagramError instagramError = { message: "Error occurred when HTTP client invocation." };
             instagramError.cause = err.cause;
             return instagramError;
         }
