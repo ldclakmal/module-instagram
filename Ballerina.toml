@@ -1,0 +1,7 @@
+[project]
+license = "Apache-2.0"
+org-name = "chanakal"
+version = "0.5.0"
+authors = ["Chanaka Lakmal"]
+repository = "https://github.com/ldclakmal/package-instagram"
+keywords = ["instagram", "social-network"]
