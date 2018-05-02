@@ -38,7 +38,7 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
                 }
             };
 
-		var details = instagramClient -> getAccountDetails();
+		var details = instagramClient -> getOwnerInfo();
 		match details {
 		    Account account => io:println(account);
 		    InstagramError instagramError => test:assertFail(msg = instagramError.message);

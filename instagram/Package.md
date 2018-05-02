@@ -38,11 +38,19 @@ endpoint instagram:Client instagramEP {
    }
 };
 ```
-The `getAccountDetails` function returns the information about the owner of the account for the given access token.
+The `getOwnerInfo` function returns the information about the owner of the access_token.
 ```ballerina
-    var details = instagramClient->getAccountDetails();
+    var details = instagramClient->getOwnerInfo();
     match details {
         Account account => io:println(account);
+        InstagramError instagramError => test:assertFail(msg = instagramError.message);
+    }
+```
+The `getMostRecentMedia` function returns the most recent media published by the owner of the access_token.
+```ballerina
+    var details = instagramClient->getMostRecentMedia();
+    match details {
+        json response => io:println(response);
         InstagramError instagramError => test:assertFail(msg = instagramError.message);
     }
 ```
