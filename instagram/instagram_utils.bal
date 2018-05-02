@@ -1,6 +1,8 @@
 import ballerina/http;
 
-documentation { Check for HTTP response and if response is success parse HTTP response object into json and parse error otherwise
+documentation {
+    Check for HTTP response and if response is success parse HTTP response object into json and parse error otherwise.
+
     P{{response}} Http response or HTTP connector error with network related errors
     R{{}} Json payload or `InstagramError` if anything wrong happen when HTTP client invocation or parsing response to json
 }

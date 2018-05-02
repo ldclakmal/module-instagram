@@ -1,7 +1,9 @@
 import ballerina/http;
 import ballerina/mime;
 
-documentation {Object to initialize the connection with Instagram.
+documentation {
+    Object to initialize the connection with Instagram.
+
     F{{accessToken}} Access token of the account
     F{{client}} Http client endpoint for api
 }
@@ -12,7 +14,9 @@ public type InstagramConnector object {
         http:Client client;
     }
 
-    documentation { Return account details
+    documentation {
+        Return account details.
+
         R{{}} If success, returns account object with basic details, else returns `InstagramError` object
     }
     public function getAccountDetails() returns (Account|InstagramError);

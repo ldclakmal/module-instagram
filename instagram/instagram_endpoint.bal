@@ -1,6 +1,8 @@
 import ballerina/http;
 
-documentation { Object for Instagram endpoint.
+documentation {
+    Object for Instagram endpoint.
+
     F{{instagramConnector}} Reference to InstagramConnector type
 }
 public type Client object {
@@ -9,12 +11,16 @@ public type Client object {
         InstagramConnector instagramConnector = new;
     }
 
-    documentation { Initialize Instagram endpoint
+    documentation {
+        Initialize Instagram endpoint.
+
         P{{instagramConfig}} Instagram configuraion
     }
     public function init(InstagramConfiguration instagramConfig);
 
-    documentation { Initialize Instagram endpoint
+    documentation {
+        Initialize Instagram endpoint.
+
         R{{}} The Instagram connector object
     }
     public function getCallerActions() returns InstagramConnector;
