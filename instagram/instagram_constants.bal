@@ -2,6 +2,7 @@
 @final string INSTAGRAM_API_URL = "https://api.instagram.com/v1";
 
 @final string USERS_SELF_API = "/users/self/?access_token=";
+@final string USERS_MEDIA_RECENT = "/users/self/media/recent/?access_token=";
 
 // Symbols
 @final string EMPTY_STRING = "";

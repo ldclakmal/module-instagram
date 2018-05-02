@@ -20,6 +20,13 @@ public type InstagramConnector object {
         R{{}} If success, returns account object with basic details, else returns `InstagramError` object
     }
     public function getOwnerInfo() returns (Account|InstagramError);
+
+    documentation {
+        Get the most recent media published by the owner of the access_token.
+
+        R{{}} If success, returns json object with details, else returns `InstagramError` object
+    }
+    public function getMostRecentMedia() returns (json|InstagramError);
 };
 
 public function InstagramConnector::getOwnerInfo() returns (Account|InstagramError) {
@@ -28,4 +35,12 @@ public function InstagramConnector::getOwnerInfo() returns (Account|InstagramErr
     var response = httpClient->get(requestPath);
     json jsonResponse = check parseResponseToJson(response);
     return mapJsonToAccount(jsonResponse);
+}
+
+public function InstagramConnector::getMostRecentMedia() returns (json|InstagramError) {
+    endpoint http:Client httpClient = self.client;
+    string requestPath = USERS_MEDIA_RECENT + self.accessToken;
+    var response = httpClient->get(requestPath);
+    json jsonResponse = check parseResponseToJson(response);
+    return jsonResponse;
 }
