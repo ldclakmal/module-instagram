@@ -15,9 +15,9 @@ endpoint Client instagramClient {
 @test:Config
 function testAccountDetails() {
     io:println("\n ---------------------------------------------------------------------------");
-    log:printInfo("instagramClient -> getAccountDetails()");
+    log:printInfo("instagramClient -> getOwnerInfo()");
 
-    var details = instagramClient->getAccountDetails();
+    var details = instagramClient->getOwnerInfo();
     match details {
         Account account => io:println(account);
         InstagramError instagramError => test:assertFail(msg = instagramError.message);

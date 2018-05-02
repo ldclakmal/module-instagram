@@ -38,7 +38,7 @@ endpoint instagram:Client instagramEP {
    }
 };
 ```
-The `getAccountDetails` function returns the details of the user account for the given access token.
+The `getAccountDetails` function returns the information about the owner of the account for the given access token.
 ```ballerina
     var details = instagramClient->getAccountDetails();
     match details {

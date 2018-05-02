@@ -15,14 +15,14 @@ public type InstagramConnector object {
     }
 
     documentation {
-        Return account details.
+        Get information about the owner of the access_token.
 
         R{{}} If success, returns account object with basic details, else returns `InstagramError` object
     }
-    public function getAccountDetails() returns (Account|InstagramError);
+    public function getOwnerInfo() returns (Account|InstagramError);
 };
 
-public function InstagramConnector::getAccountDetails() returns (Account|InstagramError) {
+public function InstagramConnector::getOwnerInfo() returns (Account|InstagramError) {
     endpoint http:Client httpClient = self.client;
     string requestPath = USERS_SELF_API + self.accessToken;
     var response = httpClient->get(requestPath);
