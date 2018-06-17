@@ -2,11 +2,12 @@ import ballerina/io;
 import ballerina/log;
 import ballerina/test;
 import ballerina/config;
+import ballerina/http;
 
 endpoint Client instagramClient {
     clientConfig: {
         auth: {
-            scheme: "oauth",
+            scheme: http:OAUTH2,
             accessToken: config:getAsString("ACCESS_TOKEN")
         }
     }

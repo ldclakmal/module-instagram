@@ -12,7 +12,7 @@ The `chanakal/instagram` package contains operations to get the Instagram accoun
 ## Compatibility
 |                          |    Version     |
 |:------------------------:|:--------------:|
-| Ballerina Language       | 0.970.0        |
+| Ballerina Language       | 0.975.0        |
 | Instagram API            | v1             |
 
 ## Sample
