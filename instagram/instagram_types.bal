@@ -12,7 +12,7 @@ documentation {
     F{{followsCount}} No. of followings of the account
     F{{follwedByCount}} No. of followers of the account
 }
-public type Account {
+public type Account record {
     string id;
     string username;
     string profilePicture;
@@ -29,7 +29,7 @@ documentation {
     F{{message}} A custom message about the error
     F{{cause}} Error object reffered to the occurred error
 }
-public type InstagramError {
+public type InstagramError record {
     string message;
     error? cause;
 };

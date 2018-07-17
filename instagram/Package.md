@@ -12,7 +12,7 @@ The `chanakal/instagram` package contains operations to get the Instagram accoun
 ## Compatibility
 |                          |    Version     |
 |:------------------------:|:--------------:|
-| Ballerina Language       | 0.975.0        |
+| Ballerina Language       | 0.980.0        |
 | Instagram API            | v1             |
 
 ## Sample
@@ -32,7 +32,7 @@ You can now enter the credentials in the Instagram endpoint configuration.
 endpoint instagram:Client instagramEP {
    clientConfig:{
        auth:{
-           scheme:"oauth",
+           scheme:http:OAUTH2,
            accessToken:"<your_access_token>"
        }
    }
@@ -42,8 +42,8 @@ The `getOwnerInfo` function returns the information about the owner of the acces
 ```ballerina
     var details = instagramClient->getOwnerInfo();
     match details {
-        Account account => io:println(account);
-        InstagramError instagramError => test:assertFail(msg = instagramError.message);
+        instagram:Account account => io:println(account);
+        instagram:InstagramError instagramError => test:assertFail(msg = instagramError.message);
     }
 ```
 The `getMostRecentMedia` function returns the most recent media published by the owner of the access_token.
@@ -51,6 +51,6 @@ The `getMostRecentMedia` function returns the most recent media published by the
     var details = instagramClient->getMostRecentMedia();
     match details {
         json response => io:println(response);
-        InstagramError instagramError => test:assertFail(msg = instagramError.message);
+        instagram:InstagramError instagramError => test:assertFail(msg = instagramError.message);
     }
 ```

@@ -7,7 +7,7 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 
 | Ballerina Language Version  | Instagram API Version |
 |:---------------------------:|:---------------------:|
-| 0.975.0                     | v1                    |
+| 0.980.0                     | v1                    |
 
 ## Getting started
 
@@ -26,22 +26,26 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 4. Import the Instagram package to your Ballerina program as follows.
 
 	```ballerina
-	    import wso2/instagram;
+	    import ballerina/http;
+	    import ballerina/io;
+	    import ballerina/test;
+	    import ballerina/config;
+	    import chanakal/instagram;
 
 	    function main (string... args) {
             endpoint instagram:Client instagramClient {
                 clientConfig: {
                     auth: {
-                        scheme: "oauth",
+                        scheme: http:OAUTH2,
                         accessToken: config:getAsString("ACCESS_TOKEN")
                     }
                 }
             };
 
-		var details = instagramClient -> getOwnerInfo();
-		match details {
-		    Account account => io:println(account);
-		    InstagramError instagramError => test:assertFail(msg = instagramError.message);
-		}
-	   }
+            var details = instagramClient -> getOwnerInfo();
+            match details {
+                instagram:Account account => io:println(account);
+                instagram:InstagramError instagramError => test:assertFail(msg = instagramError.message);
+            }
+	    }
 	```

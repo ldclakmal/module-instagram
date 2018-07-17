@@ -9,10 +9,8 @@ documentation {
 }
 public type InstagramConnector object {
 
-    public {
-        string accessToken;
-        http:Client client;
-    }
+    public string accessToken;
+    public http:Client client;
 
     documentation {
         Get information about the owner of the access_token.
@@ -29,7 +27,7 @@ public type InstagramConnector object {
     public function getMostRecentMedia() returns (json|InstagramError);
 };
 
-public function InstagramConnector::getOwnerInfo() returns (Account|InstagramError) {
+function InstagramConnector::getOwnerInfo() returns (Account|InstagramError) {
     endpoint http:Client httpClient = self.client;
     string requestPath = USERS_SELF_API + self.accessToken;
     var response = httpClient->get(requestPath);
@@ -37,7 +35,7 @@ public function InstagramConnector::getOwnerInfo() returns (Account|InstagramErr
     return mapJsonToAccount(jsonResponse);
 }
 
-public function InstagramConnector::getMostRecentMedia() returns (json|InstagramError) {
+function InstagramConnector::getMostRecentMedia() returns (json|InstagramError) {
     endpoint http:Client httpClient = self.client;
     string requestPath = USERS_MEDIA_RECENT + self.accessToken;
     var response = httpClient->get(requestPath);

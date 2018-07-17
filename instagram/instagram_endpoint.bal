@@ -7,9 +7,7 @@ documentation {
 }
 public type Client object {
 
-    public {
-        InstagramConnector instagramConnector = new;
-    }
+    public InstagramConnector instagramConnector = new;
 
     documentation {
         Initialize Instagram endpoint.
@@ -31,12 +29,12 @@ documentation {
     F{{accessToken}} Access token of the account
     F{{clientConfig}} The http client endpoint
 }
-public type InstagramConfiguration {
+public type InstagramConfiguration record {
     string accessToken;
     http:ClientEndpointConfig clientConfig;
 };
 
-public function Client::init(InstagramConfiguration instagramConfig) {
+function Client::init(InstagramConfiguration instagramConfig) {
     http:AuthConfig? auth = instagramConfig.clientConfig.auth;
     match auth {
         http:AuthConfig authConfig => {
@@ -48,6 +46,6 @@ public function Client::init(InstagramConfiguration instagramConfig) {
     self.instagramConnector.client.init(instagramConfig.clientConfig);
 }
 
-public function Client::getCallerActions() returns InstagramConnector {
+function Client::getCallerActions() returns InstagramConnector {
     return self.instagramConnector;
 }
