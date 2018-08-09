@@ -7,7 +7,7 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 
 | Ballerina Language Version  | Instagram API Version |
 |:---------------------------:|:---------------------:|
-| 0.980.0                     | v1                    |
+| 0.981.0                     | v1                    |
 
 ## Getting started
 
