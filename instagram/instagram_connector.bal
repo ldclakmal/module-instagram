@@ -1,29 +1,23 @@
 import ballerina/http;
 import ballerina/mime;
 
-documentation {
-    Object to initialize the connection with Instagram.
-
-    F{{accessToken}} Access token of the account
-    F{{client}} Http client endpoint for api
-}
+# Object to initialize the connection with Instagram.
+#
+# + accessToken - Access token of the account
+# + client - Http client endpoint for api
 public type InstagramConnector object {
 
     public string accessToken;
     public http:Client client;
 
-    documentation {
-        Get information about the owner of the access_token.
-
-        R{{}} If success, returns account object with basic details, else returns `InstagramError` object
-    }
+    # Get information about the owner of the access_token.
+    #
+    # + return - If success, returns account object with basic details, else returns `InstagramError` object
     public function getOwnerInfo() returns (Account|InstagramError);
 
-    documentation {
-        Get the most recent media published by the owner of the access_token.
-
-        R{{}} If success, returns json object with details, else returns `InstagramError` object
-    }
+    # Get the most recent media published by the owner of the access_token.
+    #
+    # + return - If success, returns json object with details, else returns `InstagramError` object
     public function getMostRecentMedia() returns (json|InstagramError);
 };
 

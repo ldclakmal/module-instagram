@@ -1,34 +1,27 @@
 import ballerina/http;
 
-documentation {
-    Object for Instagram endpoint.
-
-    F{{instagramConnector}} Reference to InstagramConnector type
-}
+# Object for Instagram endpoint.
+#
+# + instagramConnector - Reference to InstagramConnector type
 public type Client object {
 
     public InstagramConnector instagramConnector = new;
 
-    documentation {
-        Initialize Instagram endpoint.
-
-        P{{instagramConfig}} Instagram configuraion
-    }
+    # Initialize Instagram endpoint.
+    #
+    # + instagramConfig - Instagram configuraion
     public function init(InstagramConfiguration instagramConfig);
 
-    documentation {
-        Initialize Instagram endpoint.
-
-        R{{}} The Instagram connector object
-    }
+    # Initialize Instagram endpoint.
+    #
+    # + return - The Instagram connector object
     public function getCallerActions() returns InstagramConnector;
-
 };
 
-documentation {
-    F{{accessToken}} Access token of the account
-    F{{clientConfig}} The http client endpoint
-}
+# Object for instagram configuration.
+#
+# + accessToken - Access token of the account
+# + clientConfig - The http client endpoint
 public type InstagramConfiguration record {
     string accessToken;
     http:ClientEndpointConfig clientConfig;

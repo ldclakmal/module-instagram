@@ -1,17 +1,17 @@
 import ballerina/http;
 
-documentation {
-    F{{id}} Unique identifier of the account
-    F{{username}} The user name of the account
-    F{{profilePicture}} The URL to profile picture of the account
-    F{{fullName}} The full name of the account
-    F{{bio}} The bio data description of the account
-    F{{website}} The website of the account
-    F{{isBusiness}} The flag saying is a business account or personal account
-    F{{mediaCount}} No. of media have been posted from the account
-    F{{followsCount}} No. of followings of the account
-    F{{follwedByCount}} No. of followers of the account
-}
+# Record for Instagram account.
+#
+# + id - Unique identifier of the account
+# + username - The user name of the account
+# + profilePicture - The URL to profile picture of the account
+# + fullName - The full name of the account
+# + bio - The bio data description of the account
+# + website - The website of the account
+# + isBusiness - The flag saying is a business account or personal account
+# + mediaCount - No. of media have been posted from the account
+# + followsCount - No. of followings of the account
+# + follwedByCount - No. of followers of the account
 public type Account record {
     string id;
     string username;
@@ -25,10 +25,10 @@ public type Account record {
     int follwedByCount;
 };
 
-documentation {
-    F{{message}} A custom message about the error
-    F{{cause}} Error object reffered to the occurred error
-}
+# Record for Instagram error.
+#
+# + message - A custom message about the error
+# + cause - Error object reffered to the occurred error
 public type InstagramError record {
     string message;
     error? cause;
