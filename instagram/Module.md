@@ -1,22 +1,22 @@
 Connects to Instagram from Ballerina.
 
-# Package Overview
+# Module Overview
 
 The Instagram connector allows you to get users, posts details, search media, comments, tags and get information about
 locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 
 **User Operations**
 
-The `chanakal/instagram` package contains operations to get the Instagram account details.
+The `chanakal/instagram` module contains operations to get the Instagram account details.
 
 ## Compatibility
 |                          |    Version     |
 |:------------------------:|:--------------:|
-| Ballerina Language       | 0.982.0        |
+| Ballerina Language       | 0.983.0        |
 | Instagram API            | v1             |
 
 ## Sample
-First, import the `chanakal/instagram` package into the Ballerina project.
+First, import the `chanakal/instagram` module into the Ballerina project.
 ```ballerina
 import chanakal/instagram;
 ```

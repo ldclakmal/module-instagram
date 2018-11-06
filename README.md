@@ -7,7 +7,7 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 
 | Ballerina Language Version  | Instagram API Version |
 |:---------------------------:|:---------------------:|
-| 0.982.0                     | v1                    |
+| 0.983.0                     | v1                    |
 
 ## Getting started
 
@@ -23,7 +23,7 @@ locations through the Instagram REST API. It handles OAuth 2.0 authentication.
 	   <PROJECT_ROOT_DIRECTORY>$ ballerina init
 	```
 
-4. Import the Instagram package to your Ballerina program as follows.
+4. Import the Instagram module to your Ballerina program as follows.
 
 	```ballerina
 	    import ballerina/http;
